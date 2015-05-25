@@ -7,9 +7,8 @@ function start(route, handle) {
     console.log("Request for "+pathname+" received.");
     response.writeHead(200, { "Content-Type": "text/plain"});
 
-    route(handle, pathname);
-
-    response.write("Hello World");
+    var content = route(handle, pathname);
+    response.write(content);
     response.end();
   };
 
